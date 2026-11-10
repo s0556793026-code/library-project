@@ -11,7 +11,7 @@ def main():
         show_menu()
         choice = get_and_validate("Choose an option: ", is_digits)
         if choice == '1':
-            display_books(books)
+            choice = display_books(books)
         elif choice == '2':
             name = get_and_validate("Enter book name: ", is_not_empty)
             print(search_book(books, name))
@@ -31,7 +31,7 @@ def main():
         elif choice == '7':
             auther = get_and_validate("Enter auther name: ", is_not_empty)
             print(get_books_by_author(books, author))
-        else:
+        elif choice != '8':
             print("choich must be 1-8")
 if __name__=="__main__":
     main()
